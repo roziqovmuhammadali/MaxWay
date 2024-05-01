@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Slider from "../components/Slider";
 import Slider2 from "../components/karusel";
 import Hero from "../components/Hero";
+import MaxBox from "../components/MaxBox";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Slider />
       <Slider2 />
       <Hero />
+      <MaxBox />
     </div>
   );
 };
