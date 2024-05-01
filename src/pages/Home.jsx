@@ -1,12 +1,14 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Slider from "../components/Slider";
+import Slider2 from "../components/karusel";
 
 const Home = () => {
   return (
-    <div>
+    <div className="space-y-10">
       <Navbar />
       <Slider />
+      <Slider2 />
     </div>
   );
 };
