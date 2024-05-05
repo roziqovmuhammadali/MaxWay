@@ -5,29 +5,30 @@ const maxBox = [
     title: "Shaurma",
     subtitre: "Donor bulochka, mol go'shti-donar, yangi bodring, pomid...",
     price: "28 000 ",
-    images: "../../public/shourma.svg"
+    images: "../../public/shourma.svg",
   },
   {
     id: 2,
     title: "German Donar",
     subtitre: "Non, ranch sousi, qizil karam salati, Doner go'shti, ay...",
     price: "30 000 ",
-    images: "../../public/donar.svg"
-  }
+    images: "../../public/donar.svg",
+  },
 ];
 
 const Shaurma = () => {
   return (
     <div>
-      <div className="px-[120px]">
+      <div className="sm:px-[20px] md:px-[40px] lg:px-[40px] xl:px-[120px]">
         <h1 className="text-[38px] font-bold leading-8 pb-8 left-0">
           🌮Shaurma
         </h1>
-        <div className="grid grid-cols-4  gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {maxBox.map((item, index) => (
             <div
               key={index}
-              className="w-[304px] h-[379px] my-6 shadow-xl rounded-xl py-4 flex flex-col justify-center items-center">
+              className="w-[304px] h-[379px] my-6 shadow-xl rounded-xl py-4 flex flex-col justify-center items-center"
+            >
               <img
                 src={item.images}
                 alt="logo"

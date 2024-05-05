@@ -4,7 +4,7 @@ import aksiyon from "../../public/aksiya.svg";
 const Hero = () => {
   fetch("https://66349ced9bb0df2359a218d1.mockapi.io/products", {
     method: "GET",
-    headers: { "content-type": "application/json" }
+    headers: { "content-type": "application/json" },
   })
     .then((res) => {
       if (res.ok) {
@@ -21,7 +21,7 @@ const Hero = () => {
     });
 
   return (
-    <div className="px-[120px]">
+    <div className="sm:px-[20px] md:px-[40px] lg:px-[60px] xl:px-[120px]">
       <h1 className="text-[28px] font-bold leading-8 pb-8 left-0">
         🎉 Aksiya 2+1
       </h1>

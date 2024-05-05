@@ -6,36 +6,37 @@ const maxBox = [
     title: "Gamburger",
     subtitre: "Burger bulochkasi, tuzlangan bodring, pomidor, go'shtli...",
     price: "25 000 ",
-    images: "../../public/gamburger.svg"
+    images: "../../public/gamburger.svg",
   },
   {
     id: 2,
     title: "Chizburger",
     subtitre: "Burger bulochkasi, tuzlangan bodring, pomidor, go'shtli...",
     price: "28 000 ",
-    images: "../../public/chizBurger.svg"
+    images: "../../public/chizBurger.svg",
   },
   {
     id: 3,
     title: "Bigburger",
     subtitre: "Burger bulochkasi, tuzlangan bodring, pomidor, 2 go'sh...",
     price: "40 000 ",
-    images: "../../public/bigBurger.svg"
-  }
+    images: "../../public/bigBurger.svg",
+  },
 ];
 
 const Burger = () => {
   return (
     <div>
-      <div className="px-[120px]">
+      <div className="sm:px-[20px] md:px-[40px] lg:px-[40px] xl:px-[120px]">
         <h1 className="text-[38px] font-bold leading-8 pb-8 left-0">
           🍔Burger
         </h1>
-        <div className="grid grid-cols-4  gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {maxBox.map((item, index) => (
             <div
               key={index}
-              className="w-[304px] h-[379px] shadow-xl my-6 rounded-xl py-4 flex flex-col justify-center items-center">
+              className="w-[304px] h-[379px] shadow-xl my-6 rounded-xl py-4 flex flex-col justify-center items-center"
+            >
               <img
                 src={item.images}
                 alt="logo"

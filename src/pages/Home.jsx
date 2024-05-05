@@ -14,11 +14,11 @@ import Gazaklar from "../components/Gazaklar";
 import Tamaddilar from "../components/Tamaddilar";
 import Desert from "../components/Desert";
 import Ichimlik from "../components/Ichimlik";
+import Souss from "../components/Souss";
 
 const Home = () => {
   return (
-    <div className="space-y-10">
-      <Navbar />
+    <div className="space-y-10 ">
       <Slider />
       {/* <Slider2 /> */}
       {/* <AdaptiveHeight /> */}
@@ -35,6 +35,7 @@ const Home = () => {
       <Tamaddilar />
       <Desert />
       <Ichimlik />
+      <Souss />
     </div>
   );
 };

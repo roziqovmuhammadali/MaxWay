@@ -7,7 +7,7 @@ const maxBox = [
     subtitre: "Hot-dog bulochkasi, Kanada sosiskasi, tuzlangan bodring...",
     price: "12 000 ",
     images:
-      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2Fd07386d0-4d92-4406-8c47-0ec0ff3123a3&w=1920&q=75"
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2Fd07386d0-4d92-4406-8c47-0ec0ff3123a3&w=1920&q=75",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const maxBox = [
     subtitre: "Hot-dog bulochkasi, 2 ta kanada sosiskasi, tuzlangan bo...",
     price: "20 000 ",
     images:
-      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F98a353dd-4a8f-4944-b2d6-94d0808cb8ee&w=1920&q=75  "
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F98a353dd-4a8f-4944-b2d6-94d0808cb8ee&w=1920&q=75  ",
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ const maxBox = [
     subtitre: "Hot-dog bulochkasi, kanada sosiskasi, tuzlangan bodri...",
     price: "15 000 ",
     images:
-      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2Fc52a29e0-98dc-412d-863b-25de7c4f14f8&w=1920&q=75"
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2Fc52a29e0-98dc-412d-863b-25de7c4f14f8&w=1920&q=75",
   },
   {
     id: 3,
@@ -31,22 +31,23 @@ const maxBox = [
     subtitre: "Hot-dog bulochka,ketchup, mayonez, strips 1 dona, tuzl...",
     price: "15 000 ",
     images:
-      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F9d53b565-b89b-479b-b50d-f63d4b8183ef&w=1920&q=75"
-  }
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F9d53b565-b89b-479b-b50d-f63d4b8183ef&w=1920&q=75",
+  },
 ];
 
 const HotDog = () => {
   return (
     <div>
-      <div className="px-[120px]">
+      <div className="sm:px-[20px] md:px-[40px] lg:px-[40px] xl:px-[120px]">
         <h1 className="text-[38px] font-bold leading-8 pb-8 left-0">
           🌭Hot-Dog
         </h1>
-        <div className="grid grid-cols-4  gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {maxBox.map((item, index) => (
             <div
               key={index}
-              className="w-[304px] h-[379px] shadow-xl my-6 rounded-xl py-4 flex flex-col justify-center items-center">
+              className="w-[304px] h-[379px] shadow-xl my-6 rounded-xl py-4 flex flex-col justify-center items-center"
+            >
               <img
                 src={item.images}
                 alt="logo"
