@@ -1,66 +1,39 @@
 import React from "react";
-
 const maxBox = [
   {
     id: 1,
-    title: "Maxi BOX An'anaviy",
-    subtitre: "Original sendvich, kartoshka fri, 0,4 l coca cola, tanl...",
-    price: "42 000 ",
-    images: "../../public/ananaviy.svg"
+    title: "Guruch",
+    subtitre: "Shirin makkajo'xori bilan pishirilgan lazer guruch",
+    price: "7 000 ",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F1c55ac0a-6436-4b1d-ada7-8377b6871e53&w=1920&q=75"
   },
   {
     id: 2,
-    title: "Maxi BOX Taniqli",
-    subtitre: "Original lavash, kartoshka fri, 0,4 l coca cola, tanlas...",
-    price: "42 000 ",
-    images: "../../public/taniqli.svg"
-  },
-  {
-    id: 3,
-    title: "Maxi BOX Retro",
-    subtitre: "Shaurma Original, kartoshka fri, 0,4 l coca cola, tanl...",
-    price: "40 000 ",
-    images: "../../public/retro.svg"
-  },
-  {
-    id: 4,
-    title: "Max BOX German",
-    subtitre: "Herman Donar , kartoshka fri, 0,4 l coca cola, tanlash ...",
-    price: "40 000 ",
-    images: "../../public/german.svg"
-  },
-  {
-    id: 5,
-    title: "Maxi BOX Trend",
-    subtitre: "Gamburger, kartoshka fri, 0,4 l coca cola, tanlash uch...",
-    price: "38 000 ",
-    images: "../../public/maxBox.svg"
-  },
-  {
-    id: 6,
-    title: "Mini BOX",
-    subtitre: "Longer, kartoshka fri, coca-cola 0,3, tanlovga ko'ra so...",
-    price: "25 000 ",
-    images: "../../public/miniBox.svg"
+    title: "Salat",
+    subtitre: "Salat qizil karam aralashmasi",
+    price: "7 000 ",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2Fefff60bd-15c2-4e6c-9f1b-2a0eea692af7&w=1920&q=75"
   }
 ];
 
-const MaxBox = () => {
+const Tamaddilar = () => {
   return (
     <div>
       <div className="px-[120px]">
         <h1 className="text-[38px] font-bold leading-8 pb-8 left-0">
-          🍟🍔🥤Maxi BOX
+          🍚Tamaddilar
         </h1>
         <div className="grid grid-cols-4  gap-6">
           {maxBox.map((item, index) => (
             <div
               key={index}
-              className="w-[304px] h-[379px] shadow-xl my-6 rounded-xl py-4 flex flex-col justify-center items-center">
+              className="w-[304px] h-[379px] my-6 shadow-xl rounded-xl py-4 flex flex-col justify-center items-center">
               <img
                 src={item.images}
                 alt="logo"
-                className="w-full rounded-t-xl "
+                className=" w-full h-[304px] rounded-t-xl "
               />
               <div className="w-full h-full p-4 space-y-3">
                 <h1 className=" text-[18px] font-bold">{item.title}</h1>
@@ -85,4 +58,4 @@ const MaxBox = () => {
   );
 };
 
-export default MaxBox;
+export default Tamaddilar;

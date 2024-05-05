@@ -3,54 +3,57 @@ import React from "react";
 const maxBox = [
   {
     id: 1,
-    title: "Maxi BOX An'anaviy",
-    subtitre: "Original sendvich, kartoshka fri, 0,4 l coca cola, tanl...",
-    price: "42 000 ",
-    images: "../../public/ananaviy.svg"
+    title: "Tiramisu",
+    subtitre: "Savoyardi pechene, mascarpone, qahva",
+    price: "22 000 ",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2Fdd3eb9ef-b9e6-48ac-824a-66cfd0f39913&w=1920&q=75"
   },
   {
     id: 2,
-    title: "Maxi BOX Taniqli",
-    subtitre: "Original lavash, kartoshka fri, 0,4 l coca cola, tanlas...",
-    price: "42 000 ",
-    images: "../../public/taniqli.svg"
+    title: "Qulupnayli donat",
+    price: "16 000 ",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F49e2f3af-66e9-46de-8646-5433e5dfb9af&w=1920&q=75"
   },
   {
     id: 3,
-    title: "Maxi BOX Retro",
-    subtitre: "Shaurma Original, kartoshka fri, 0,4 l coca cola, tanl...",
-    price: "40 000 ",
-    images: "../../public/retro.svg"
+    title: "Karamel donat",
+    price: "16 000 ",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2Fb8b5b8f1-f169-4b8e-8c0d-4e078617bb7d&w=1920&q=75"
   },
   {
     id: 4,
-    title: "Max BOX German",
-    subtitre: "Herman Donar , kartoshka fri, 0,4 l coca cola, tanlash ...",
-    price: "40 000 ",
-    images: "../../public/german.svg"
+    title: "Yo'ng'oqli donat",
+    price: "16 000 ",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2Fe10a89fe-5795-4d83-85ca-9eea113dc547&w=1920&q=75"
   },
   {
     id: 5,
-    title: "Maxi BOX Trend",
-    subtitre: "Gamburger, kartoshka fri, 0,4 l coca cola, tanlash uch...",
-    price: "38 000 ",
-    images: "../../public/maxBox.svg"
+    title: "Brauni",
+    subtitre: "Qora shokolad, yong'oq va shokoladli pechene",
+    price: "22 000 ",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2Febf7f8ee-0181-4294-9be8-f9241e3cff08&w=1920&q=75"
   },
   {
     id: 6,
-    title: "Mini BOX",
-    subtitre: "Longer, kartoshka fri, coca-cola 0,3, tanlovga ko'ra so...",
-    price: "25 000 ",
-    images: "../../public/miniBox.svg"
+    title: "San-sebastian",
+    subtitre: "Savoyardi kukilari, mascarpone, kahva",
+    price: "22 000 ",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F1ae33c55-cbd8-4d0a-b9a6-6a7624beca32&w=1920&q=75"
   }
 ];
 
-const MaxBox = () => {
+const Desert = () => {
   return (
     <div>
       <div className="px-[120px]">
         <h1 className="text-[38px] font-bold leading-8 pb-8 left-0">
-          🍟🍔🥤Maxi BOX
+          🍰Desertlar
         </h1>
         <div className="grid grid-cols-4  gap-6">
           {maxBox.map((item, index) => (
@@ -85,4 +88,4 @@ const MaxBox = () => {
   );
 };
 
-export default MaxBox;
+export default Desert;

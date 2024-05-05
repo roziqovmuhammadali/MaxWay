@@ -18,7 +18,7 @@ import "swiper/css/effect-fade";
 
 const Slider2 = () => {
   return (
-    <div className="h-20 flex items-center justify-center px-[60px]">
+    <div className="h-20 flex items-center justify-center px-[120px]">
       <Swiper
         modules={[
           Navigation,

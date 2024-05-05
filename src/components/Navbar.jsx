@@ -4,14 +4,15 @@ import { FaChevronRight } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaUser } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div className="w-full">
-      <div className="flex items-center justify-between shadow-sm px-[96px] h-[80px] w-full">
+      <div className="flex items-center justify-between shadow-sm px-[120px] h-[80px] w-full">
         <div className="flex items-center gap-7 ">
           <button className="w-[30px] h-[30px] rounded-[50%]">
-            <FaChevronLeft />
+            <NavLink></NavLink>
           </button>
 
           <ul className="flex items-center justify-center gap-6">

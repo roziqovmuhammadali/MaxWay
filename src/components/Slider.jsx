@@ -39,23 +39,11 @@ const Slider = () => {
           clickable: true,
           className: "swiper-pagination-bullet"
         }}>
-        <SwiperSlide>
-          <div className="flex h-[600px] w-full items-center rounded-lg justify-between px-[80px]">
-            <div className="h-full w-[100%]">
-              <img
-                src={header}
-                alt="img"
-                className=" h-full w-full rounded-lg"
-              />
-            </div>
-          </div>{" "}
+        <SwiperSlide className="flex items-center justify-center w-full ">
+          <img src={header} alt="img" className=" h-full w-[80%] rounded-3xl" />
         </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex h-[600px] w-full items-center rounded-lg justify-between px-[80px]">
-            <div className="h-full rounded-lg w-[100%]">
-              <img src={header2} alt="img" className=" h-full w-full " />
-            </div>
-          </div>{" "}
+        <SwiperSlide className="flex items-center justify-center w-full ">
+          <img src={header2} alt="img" className="h-full w-[80%] rounded-3xl" />
         </SwiperSlide>
       </Swiper>
       <div></div>

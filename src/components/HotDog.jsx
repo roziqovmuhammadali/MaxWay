@@ -3,54 +3,44 @@ import React from "react";
 const maxBox = [
   {
     id: 1,
-    title: "Maxi BOX An'anaviy",
-    subtitre: "Original sendvich, kartoshka fri, 0,4 l coca cola, tanl...",
-    price: "42 000 ",
-    images: "../../public/ananaviy.svg"
+    title: "Hot Dog",
+    subtitre: "Hot-dog bulochkasi, Kanada sosiskasi, tuzlangan bodring...",
+    price: "12 000 ",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2Fd07386d0-4d92-4406-8c47-0ec0ff3123a3&w=1920&q=75"
   },
   {
     id: 2,
-    title: "Maxi BOX Taniqli",
-    subtitre: "Original lavash, kartoshka fri, 0,4 l coca cola, tanlas...",
-    price: "42 000 ",
-    images: "../../public/taniqli.svg"
+    title: "King Dog",
+    subtitre: "Hot-dog bulochkasi, 2 ta kanada sosiskasi, tuzlangan bo...",
+    price: "20 000 ",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F98a353dd-4a8f-4944-b2d6-94d0808cb8ee&w=1920&q=75  "
   },
   {
     id: 3,
-    title: "Maxi BOX Retro",
-    subtitre: "Shaurma Original, kartoshka fri, 0,4 l coca cola, tanl...",
-    price: "40 000 ",
-    images: "../../public/retro.svg"
+    title: "Chiz dog",
+    subtitre: "Hot-dog bulochkasi, kanada sosiskasi, tuzlangan bodri...",
+    price: "15 000 ",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2Fc52a29e0-98dc-412d-863b-25de7c4f14f8&w=1920&q=75"
   },
   {
-    id: 4,
-    title: "Max BOX German",
-    subtitre: "Herman Donar , kartoshka fri, 0,4 l coca cola, tanlash ...",
-    price: "40 000 ",
-    images: "../../public/german.svg"
-  },
-  {
-    id: 5,
-    title: "Maxi BOX Trend",
-    subtitre: "Gamburger, kartoshka fri, 0,4 l coca cola, tanlash uch...",
-    price: "38 000 ",
-    images: "../../public/maxBox.svg"
-  },
-  {
-    id: 6,
-    title: "Mini BOX",
-    subtitre: "Longer, kartoshka fri, coca-cola 0,3, tanlovga ko'ra so...",
-    price: "25 000 ",
-    images: "../../public/miniBox.svg"
+    id: 3,
+    title: "Longer",
+    subtitre: "Hot-dog bulochka,ketchup, mayonez, strips 1 dona, tuzl...",
+    price: "15 000 ",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F9d53b565-b89b-479b-b50d-f63d4b8183ef&w=1920&q=75"
   }
 ];
 
-const MaxBox = () => {
+const HotDog = () => {
   return (
     <div>
       <div className="px-[120px]">
         <h1 className="text-[38px] font-bold leading-8 pb-8 left-0">
-          🍟🍔🥤Maxi BOX
+          🌭Hot-Dog
         </h1>
         <div className="grid grid-cols-4  gap-6">
           {maxBox.map((item, index) => (
@@ -60,7 +50,7 @@ const MaxBox = () => {
               <img
                 src={item.images}
                 alt="logo"
-                className="w-full rounded-t-xl "
+                className="w-full h-[304px] rounded-t-xl "
               />
               <div className="w-full h-full p-4 space-y-3">
                 <h1 className=" text-[18px] font-bold">{item.title}</h1>
@@ -85,4 +75,4 @@ const MaxBox = () => {
   );
 };
 
-export default MaxBox;
+export default HotDog;
