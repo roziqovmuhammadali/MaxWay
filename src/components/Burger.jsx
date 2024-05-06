@@ -6,21 +6,24 @@ const maxBox = [
     title: "Gamburger",
     subtitre: "Burger bulochkasi, tuzlangan bodring, pomidor, go'shtli...",
     price: "25 000 ",
-    images: "../../public/gamburger.svg",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F33f3c109-bbca-40a1-8d68-455a6f88b1f0&w=2048&q=75",
   },
   {
     id: 2,
     title: "Chizburger",
     subtitre: "Burger bulochkasi, tuzlangan bodring, pomidor, go'shtli...",
     price: "28 000 ",
-    images: "../../public/chizBurger.svg",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2Ffa034d3e-a445-4068-9475-05e71706910b&w=2048&q=75",
   },
   {
     id: 3,
     title: "Bigburger",
     subtitre: "Burger bulochkasi, tuzlangan bodring, pomidor, 2 go'sh...",
     price: "40 000 ",
-    images: "../../public/bigBurger.svg",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2Fe4015fd5-0988-47e1-bb3e-9c1b6d1a0e90&w=2048&q=75",
   },
 ];
 

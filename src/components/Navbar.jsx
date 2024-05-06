@@ -159,7 +159,7 @@ const Top = () => {
           <span className="text-[#735197] hidden lg:flex  w-[40px] h-[40px] rounded-[50%] bg-[#F1EFF4]  items-center justify-center">
             <RoomIcon />{" "}
           </span>
-          <div className=" hidden lg:flex  w-[250px]">
+          <div className=" hidden lg:flex lg:flex-col  w-[250px]">
             <h3>Delivery</h3>
             <p className="text-[14px] font-normal text-[#685289]">
               массив Киёт, Юнусабадский район...

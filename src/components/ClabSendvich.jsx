@@ -5,14 +5,16 @@ const maxBox = [
     title: "Klab sendvich",
     subtitre: "Original sendvich, kartoshka fri, tanlash uchun sous",
     price: "36 000 ",
-    images: "../../public/sendvich.svg",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F033adb7c-0289-4f80-a0a9-05fda8e23bc5&w=2048&q=75",
   },
   {
     id: 2,
     title: "Sendvich Original",
     subtitre: "Toster non, tovuq shnitseli, yangi bodring, pomidor, kl...",
     price: "30 000 ",
-    images: "../../public/original.svg",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F6e75db0d-01c9-47e3-b178-0a2e61cd46fb&w=2048&q=75",
   },
 ];
 

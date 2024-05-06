@@ -6,7 +6,8 @@ const maxBox = [
     title: "Donar Kebab",
     subtitre: "Mol go'shti donari-go'sht, makkajo'xori bilan guruch, k...",
     price: "42 000 ",
-    images: "../../public/kebab.svg",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F561cf6a1-3f19-479d-b057-04c11ee0b891&w=1920&q=75",
   },
   {
     id: 2,
@@ -21,7 +22,8 @@ const maxBox = [
     title: "Non",
     subtitre: "Yumshoq bulochka",
     price: "30 000 ",
-    images: "../../public/non.svg",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2Fa16f5b4d-5c74-494f-a905-67d3d2edb4d6&w=2048&q=75",
   },
 ];
 

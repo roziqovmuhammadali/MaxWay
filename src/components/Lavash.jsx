@@ -5,14 +5,16 @@ const maxBox = [
     title: "Lavash",
     subtitre: "Lavash, donar mol go'shti, pomidor, chipslar, pomidor s...",
     price: "30 000 ",
-    images: "../../public/lavash.svg",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F456ce560-f72a-4993-81e5-3a06ca4bf7d3&w=2048&q=75",
   },
   {
     id: 2,
     title: "Lavash mini",
     subtitre: "Pita, mol go'shti-donar, pomidor, chipslar, pomidor sou...",
     price: "25 000 ",
-    images: "../../public/lavashMini.svg",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2Fdc9f9ebc-157f-4cd2-b9cc-1087eb9ded8c&w=2048&q=75",
   },
 ];
 

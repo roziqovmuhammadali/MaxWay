@@ -5,7 +5,8 @@ const maxBox = [
     title: "Panini",
     subtitre: "Bulochka, mol go'shti-donar, pomidor, tuzlangan bodring...",
     price: "30 000 ",
-    images: "../../public/panini.svg",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F20fd750b-8b45-4b99-902c-58e12e61bd4d&w=2048&q=75",
   },
 ];
 

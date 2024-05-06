@@ -6,42 +6,48 @@ const maxBox = [
     title: "Maxi BOX An'anaviy",
     subtitre: "Original sendvich, kartoshka fri, 0,4 l coca cola, tanl...",
     price: "42 000 ",
-    images: "../../public/ananaviy.svg",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F68352497-3ec8-45c9-94fd-2e8258ed916c&w=2048&q=75",
   },
   {
     id: 2,
     title: "Maxi BOX Taniqli",
     subtitre: "Original lavash, kartoshka fri, 0,4 l coca cola, tanlas...",
     price: "42 000 ",
-    images: "../../public/taniqli.svg",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F05323470-5019-497a-b82c-62028a52acae&w=2048&q=75",
   },
   {
     id: 3,
     title: "Maxi BOX Retro",
     subtitre: "Shaurma Original, kartoshka fri, 0,4 l coca cola, tanl...",
     price: "40 000 ",
-    images: "../../public/retro.svg",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2Fd667c0e2-86e8-4274-92f8-4362d668b862&w=2048&q=75",
   },
   {
     id: 4,
     title: "Max BOX German",
     subtitre: "Herman Donar , kartoshka fri, 0,4 l coca cola, tanlash ...",
     price: "40 000 ",
-    images: "../../public/german.svg",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F6ef451bc-3911-4fd7-997c-a9cebfc6e97d&w=2048&q=75",
   },
   {
     id: 5,
     title: "Maxi BOX Trend",
     subtitre: "Gamburger, kartoshka fri, 0,4 l coca cola, tanlash uch...",
     price: "38 000 ",
-    images: "../../public/maxBox.svg",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F5657118e-9780-4e71-aa3c-ac497b83b68a&w=2048&q=75",
   },
   {
     id: 6,
     title: "Mini BOX",
     subtitre: "Longer, kartoshka fri, coca-cola 0,3, tanlovga ko'ra so...",
     price: "25 000 ",
-    images: "../../public/miniBox.svg",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F7520a764-2b5b-4f55-8b18-92be4f1fd499&w=2048&q=75",
   },
 ];
 

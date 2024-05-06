@@ -5,14 +5,16 @@ const maxBox = [
     title: "Shaurma",
     subtitre: "Donor bulochka, mol go'shti-donar, yangi bodring, pomid...",
     price: "28 000 ",
-    images: "../../public/shourma.svg",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F97cbb3cc-de5f-4adb-88c6-349caa05113e&w=2048&q=75",
   },
   {
     id: 2,
     title: "German Donar",
     subtitre: "Non, ranch sousi, qizil karam salati, Doner go'shti, ay...",
     price: "30 000 ",
-    images: "../../public/donar.svg",
+    images:
+      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F1b1149fb-7e05-45bb-a92b-595b83c16d5a&w=2048&q=75",
   },
 ];
 
