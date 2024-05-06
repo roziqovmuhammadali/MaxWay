@@ -1,22 +1,16 @@
 import React from "react";
+import axios from "axios";
 
 const Hero = () => {
-  fetch("https://66349ced9bb0df2359a218d1.mockapi.io/products", {
-    method: "GET",
-    headers: { "content-type": "application/json" },
-  })
-    .then((res) => {
-      if (res.ok) {
-        return console.log(res.json());
-      }
-
-      // handle error
-    })
-    .then((tasks) => {
-      // Do something with the list of tasks
+  axios
+    .get("https://66349ced9bb0df2359a218d1.mockapi.io/products")
+    .then((response) => {
+      // Ma'lumotni olish muvaffaqiyatli bo'lganida
+      console.log(response.data); // Ma'lumotni konsolga chiqaramiz
     })
     .catch((error) => {
-      // handle error
+      // Xatolik bo'lganda shu qism ishlaydi
+      console.error("Xato yuz berdi!", error);
     });
 
   return (

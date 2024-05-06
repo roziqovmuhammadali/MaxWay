@@ -1,44 +1,57 @@
-import React from "react";
-
-const sous = [
-  {
-    id: 1,
-    title: "Ketchup",
-    price: "3 000 ",
-    images:
-      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F7602a40e-d2ee-495e-8543-1a505f97fc21&w=3840&q=75",
-  },
-  {
-    id: 2,
-    title: "Pishloqli sous",
-    price: "3 000 ",
-    images:
-      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F09d6df13-155c-4371-9189-87402a4c2c3f&w=3840&q=75",
-  },
-  {
-    id: 3,
-    title: "Sarimsoqli sous",
-    price: "3 000 ",
-    images:
-      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2Ff8fd90f1-d947-491c-acdd-a7b67c3de2eb&w=3840&q=75",
-  },
-  {
-    id: 4,
-    title: "Xalapeno",
-    price: "3 000 ",
-    images:
-      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F6019580b-7f23-462f-befc-3fcf2e211d0c&w=3840&q=75",
-  },
-  {
-    id: 5,
-    title: "Shirin va nordon sous",
-    price: "3 000 ",
-    images:
-      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F986269d6-7f60-4424-a2dc-a6640d00fca4&w=3840&q=75",
-  },
-];
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Souss = () => {
+  const [products, setProducts] = useState([]);
+  const [selectedProductIds, setSelectedProductIds] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://66349ced9bb0df2359a218d1.mockapi.io/products")
+      .then((response) => {
+        setProducts(response.data.slice(56, 61));
+      })
+      .catch((error) => {
+        console.error("Xatolik yuz berdi!", error);
+      });
+  }, []);
+
+  const handleProductClick = (productId) => {
+    setSelectedProductIds((prevSelectedProductIds) => {
+      if (prevSelectedProductIds.includes(productId)) {
+        return prevSelectedProductIds.filter((id) => id !== productId);
+      } else {
+        return [...prevSelectedProductIds, productId];
+      }
+    });
+  };
+
+  const increment = (productId) => {
+    setSelectedProductIds((prevSelectedProductIds) => {
+      const index = prevSelectedProductIds.indexOf(productId);
+      if (index !== -1) {
+        const updatedSelectedProductIds = [...prevSelectedProductIds];
+        updatedSelectedProductIds.splice(index, 1, productId);
+        return updatedSelectedProductIds;
+      }
+      return prevSelectedProductIds;
+    });
+    setCount((prevCount) => (prevCount < 10 ? prevCount + 1 : prevCount)); // Hisob 10 gacha oshib bormasa qayta tiklash
+  };
+
+  const decrement = (productId) => {
+    setSelectedProductIds((prevSelectedProductIds) => {
+      const index = prevSelectedProductIds.indexOf(productId);
+      if (index !== -1) {
+        const updatedSelectedProductIds = [...prevSelectedProductIds];
+        updatedSelectedProductIds.splice(index, 1);
+        return updatedSelectedProductIds;
+      }
+      return prevSelectedProductIds;
+    });
+    setCount(count > 1 ? count - 1 : 1); // Hisob 1 ga teng yoki undan kam bo'lgan bo'lsa, kamaytirish
+  };
+
   return (
     <div>
       <div className="sm:px-[20px] md:px-[40px] lg:px-[40px] xl:px-[120px]">
@@ -46,27 +59,61 @@ const Souss = () => {
           🥫Souslar
         </h1>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-6">
-          {sous.map((item, index) => (
+          {products.map((product) => (
             <div
-              key={index}
-              className="w-[304px] h-[349px] shadow-xl my-6 rounded-xl py-1 flex flex-col justify-center items-center"
+              key={product.id}
+              className="w-[304px] hover:shadow-3xl hover:shadow-gray-950 h-[379px] shadow-xl my-6 rounded-xl py-4 flex flex-col justify-center items-center"
             >
               <img
-                src={item.images}
+                src={product.productImage}
                 alt="logo"
                 className="w-full rounded-t-xl "
               />
-              <div className="w-full h-full p-4">
-                <h1 className=" text-[18px] font-bold">{item.title}</h1>
-
+              <div className="w-full h-full p-4 space-y-3">
+                <h1 className=" text-[18px] font-bold">
+                  {product.productName}
+                </h1>
+                <p className="font-normal text-[12px] leading-4 text-[#48535B] w-[256px] h-[17px] ">
+                  {product.productdisc}
+                </p>
                 <div className="flex pb-6 items-center left-0 w-full justify-between space-y-8">
                   <div className="flex pt-7 items-center left-0 gap-1 pr-9">
-                    <h1 className="font-bold text-[18px]">{item.price}</h1>
+                    <h1 className="font-bold text-[18px]">
+                      {product.productPrice}
+                    </h1>
                     <p>so'm</p>
                   </div>
-                  <button className="w-[106px] h-[40px] bg-[#51267D] px-[24px] rounded-[20px] text-[14px] font-medium text-white ">
-                    Qo'shish
-                  </button>
+                  <div className="relative mt-11 mb-10 items-center flex justify-items-center h-10">
+                    {!selectedProductIds.includes(product.id) ? (
+                      <button
+                        className="bg-[#51267D] rounded-3xl w-[106px] h-10 text-white"
+                        onClick={() => handleProductClick(product.id)}
+                      >
+                        Qo'shish
+                      </button>
+                    ) : (
+                      <div className=" bg-white border rounded-md p-2 flex items-center">
+                        <button
+                          className="bg-[#51267D] rounded-l-3xl w-8 h-8 text-white"
+                          onClick={() => decrement(product.id)}
+                        >
+                          -
+                        </button>
+                        <span className="px-2">
+                          {
+                            selectedProductIds.filter((id) => id === product.id)
+                              .length
+                          }
+                        </span>
+                        <button
+                          className="bg-[#51267D] rounded-r-3xl w-8 h-8 text-white"
+                          onClick={() => increment(product.id)}
+                        >
+                          +
+                        </button>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

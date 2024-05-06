@@ -1,41 +1,41 @@
-import React from "react";
-
-const maxBox = [
-  {
-    id: 1,
-    title: "Hot Dog",
-    subtitre: "Hot-dog bulochkasi, Kanada sosiskasi, tuzlangan bodring...",
-    price: "12 000 ",
-    images:
-      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2Fd07386d0-4d92-4406-8c47-0ec0ff3123a3&w=1920&q=75",
-  },
-  {
-    id: 2,
-    title: "King Dog",
-    subtitre: "Hot-dog bulochkasi, 2 ta kanada sosiskasi, tuzlangan bo...",
-    price: "20 000 ",
-    images:
-      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F98a353dd-4a8f-4944-b2d6-94d0808cb8ee&w=1920&q=75  ",
-  },
-  {
-    id: 3,
-    title: "Chiz dog",
-    subtitre: "Hot-dog bulochkasi, kanada sosiskasi, tuzlangan bodri...",
-    price: "15 000 ",
-    images:
-      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2Fc52a29e0-98dc-412d-863b-25de7c4f14f8&w=1920&q=75",
-  },
-  {
-    id: 3,
-    title: "Longer",
-    subtitre: "Hot-dog bulochka,ketchup, mayonez, strips 1 dona, tuzl...",
-    price: "15 000 ",
-    images:
-      "https://maxway.uz/_next/image?url=https%3A%2F%2Fcdn.delever.uz%2Fdelever%2F9d53b565-b89b-479b-b50d-f63d4b8183ef&w=1920&q=75",
-  },
-];
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 const HotDog = () => {
+  const [products, setProducts] = useState([]);
+  const [selectedProductIds, setSelectedProductIds] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://66349ced9bb0df2359a218d1.mockapi.io/products")
+      .then((response) => {
+        setProducts(response.data.slice(32, 35));
+      })
+      .catch((error) => {
+        console.error("Xatolik yuz berdi!", error);
+      });
+  }, []);
+
+  const handleProductClick = (productId) => {
+    setSelectedProductIds((prevSelectedProductIds) => {
+      if (prevSelectedProductIds.includes(productId)) {
+        return prevSelectedProductIds.filter((id) => id !== productId);
+      } else {
+        return [...prevSelectedProductIds, productId];
+      }
+    });
+  };
+
+  const increment = (productId) => {
+    setSelectedProductIds((prevSelectedProductIds) => {
+      const index = prevSelectedProductIds.indexOf(productId);
+      if (index !== -1) {
+        const updatedSelectedProductIds = [...prevSelectedProductIds];
+        updatedSelectedProductIds.splice(index, 1, productId);
+        return updatedSelectedProductIds;
+      }
+      return prevSelectedProductIds;
+    });
+  };
   return (
     <div>
       <div className="sm:px-[20px] md:px-[40px] lg:px-[40px] xl:px-[120px]">
@@ -43,29 +43,61 @@ const HotDog = () => {
           🌭Hot-Dog
         </h1>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {maxBox.map((item, index) => (
+          {products.map((product) => (
             <div
-              key={index}
-              className="w-[304px] h-[379px] shadow-xl my-6 rounded-xl py-4 flex flex-col justify-center items-center"
+              key={product.id}
+              className="w-[304px] hover:shadow-3xl hover:shadow-gray-950 h-[379px] shadow-xl my-6 rounded-xl py-4 flex flex-col justify-center items-center"
             >
               <img
-                src={item.images}
+                src={product.productImage}
                 alt="logo"
-                className="w-full h-[304px] rounded-t-xl "
+                className="w-full rounded-t-xl "
               />
               <div className="w-full h-full p-4 space-y-3">
-                <h1 className=" text-[18px] font-bold">{item.title}</h1>
-                <p className="font-normal text-[14px] leading-4 text-[#48535B] w-[256px] h-[17px] ">
-                  {item.subtitre}
+                <h1 className=" text-[18px] font-bold">
+                  {product.productName}
+                </h1>
+                <p className="font-normal text-[12px] leading-4 text-[#48535B] w-[256px] h-[17px] ">
+                  {product.productdisc}
                 </p>
                 <div className="flex pb-6 items-center left-0 w-full justify-between space-y-8">
                   <div className="flex pt-7 items-center left-0 gap-1 pr-9">
-                    <h1 className="font-bold text-[18px]">{item.price}</h1>
+                    <h1 className="font-bold text-[18px]">
+                      {product.productPrice}
+                    </h1>
                     <p>so'm</p>
                   </div>
-                  <button className="w-[106px] h-[40px] bg-[#51267D] px-[24px] rounded-[20px] text-[14px] font-medium text-white ">
-                    Qo'shish
-                  </button>
+                  <div className="relative mt-11 mb-10 items-center flex justify-items-center h-10">
+                    {!selectedProductIds.includes(product.id) ? (
+                      <button
+                        className="bg-[#51267D] rounded-3xl w-[106px] h-10 text-white"
+                        onClick={() => handleProductClick(product.id)}
+                      >
+                        Qo'shish
+                      </button>
+                    ) : (
+                      <div className="mt-11 mb-10 items-center flex justify-items-center h-10">
+                        <button
+                          className="bg-[#51267D] rounded-l-3xl w-8 h-8 text-white"
+                          onClick={() => decrement(product.id)}
+                        >
+                          -
+                        </button>
+                        <span className="px-2">
+                          {
+                            selectedProductIds.filter((id) => id === product.id)
+                              .length
+                          }
+                        </span>
+                        <button
+                          className="bg-[#51267D] rounded-r-3xl w-8 h-8 text-white"
+                          onClick={() => increment(product.id)}
+                        >
+                          +
+                        </button>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
