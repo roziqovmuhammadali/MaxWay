@@ -54,7 +54,7 @@ const Top = () => {
 
   return (
     <div>
-      <div className="flex items-center gap-5 sm:px-[20px] md:px-[40px] border-b-2 lg:px-[40px] xl:px-[120px] py-5  justify-between">
+      <div className="flex items-center gap-5 p-[10px] sm:px-[20px] md:px-[40px] border-b-2 lg:px-[40px] xl:px-[120px] py-5  justify-between">
         <div className=" flex items-center gap-5">
           <div className="lg:hidden xl:hidden 2xl:hidden">
             <div>

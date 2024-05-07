@@ -38,8 +38,8 @@ const Burger = () => {
   };
   return (
     <div>
-      <div className="sm:px-[20px] md:px-[40px] lg:px-[40px] xl:px-[120px]">
-        <h1 className="text-[38px] font-bold leading-8 pb-8 left-0">
+      <div className="sm:px-[20px] md:px-[40px] lg:px-[40px] xl:px-[120px] p-[10px]">
+        <h1 className=" text-[36px] sm:text-[18px] md:text-[20px] lg:text-[38px] font-bold leading-8 pb-8 left-0">
           🍔Burger
         </h1>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

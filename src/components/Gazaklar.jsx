@@ -38,7 +38,7 @@ const Gazaklar = () => {
   };
   return (
     <div>
-      <div className="sm:px-[20px] md:px-[40px] lg:px-[40px] xl:px-[120px]">
+      <div className="sm:px-[20px] md:px-[40px] lg:px-[40px] xl:px-[120px] p-[10px]">
         <h1 className="text-[38px] font-bold leading-8 pb-8 left-0">
           🍟Gazaklar
         </h1>
