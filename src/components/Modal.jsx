@@ -18,17 +18,26 @@ export default function Modal() {
 
   const handleDeliveryType = (type) => {
     setDeliveryType(type);
-    if (type === "delivery") {
+    if (type === "yetkazish") {
       setShowAddressInput(true);
-    } else if (type === "takeaway") {
+    } else if (type === "olibKetish") {
       setShowAddressInput(false);
       setAddressList([
         {
-          name: "MAX WAY OUTSIDE",
-          address: "ulitsa Beruni, 47, Tashkent",
-          hours: "Mon-Sun: 10:00-22:00",
+          id: 1,
+          name: "MAX WAY BERUNIY",
+          subtitr: "улица Беруни, 47, Ташкент",
+          time: "22:00 gacha ochiq",
           phone: "+998712005400",
-          openUntil: "open until 22:00",
+          endTime: "Du-Yak: 10:00-22:00",
+        },
+        {
+          id: 2,
+          name: "MAX WAY ATLAS",
+          subtitr: "улица Катартал, 28, Ташкент",
+          time: "22:00 gacha ochiq",
+          phone: "+998712005400",
+          endTime: "Du-Yak: 10:00-22:00",
         },
       ]);
     }
@@ -78,83 +87,82 @@ export default function Modal() {
                   </svg>
                 </button>
               </div>
-              <h1 className="text-xl font-semibold mb-4">
-                Choose the reception type
+              <h1 className="text-xl font-semibold ">
+                Qabul qilib olish turini tanlang
               </h1>
+              <p className="text-[#727D84] mb-4 font-medium">
+                Real vaqt va joylashuvga mos menyuni ko'rish uchun
+              </p>
               <div className="flex mb-4">
                 <button
-                  className="bg-[#51267D] text-white rounded-md px-4 py-2 mr-4"
-                  onClick={() => handleDeliveryType("delivery")}
+                  className="bg-[#F6F4F2] text-[#727D84] rounded-3xl w-[200px] h-[40px] mr-4"
+                  onClick={() => handleDeliveryType("yetkazish")}
                 >
-                  Delivery
+                  Yetkazib berish
                 </button>
                 <button
-                  className="bg-[#51267D] text-white rounded-md px-4 py-2"
-                  onClick={() => handleDeliveryType("takeaway")}
+                  className="bg-[#F6F4F2] text-[#727D84] rounded-3xl w-[200px] h-[40px]"
+                  onClick={() => handleDeliveryType("olibKetish")}
                 >
-                  Take Away
+                  Olib ketish
                 </button>
               </div>
               {showAddressInput ? (
-                <>
+                <div>
                   <input
                     type="text"
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
                     placeholder="Enter your address"
-                    className="w-full border border-gray-300 rounded-md px-3 py-2 mb-4"
+                    className="w-[500px] border border-gray-300 block rounded-xl px-3 py-2 mb-4"
                   />
                   <button
-                    className="bg-[#51267D] text-white rounded-md px-4 py-2 mb-4"
+                    className="bg-[#F6F4F2] disabled:swiper text-[#727D84] rounded-2xl font-medium h-[40px] w-[250px] mb-4"
                     onClick={handleConfirmAddress}
                   >
-                    Set Address
+                    Belgilash
                   </button>
-                </>
+                </div>
               ) : (
                 <>
-                  {addressList.map((place, index) => (
+                  {addressList.map((item) => (
                     <div
-                      key={index}
-                      className="my-10 w-[500px] border h-[180px] bg-white shadow-md"
+                      key={item.id}
+                      className=" my-10 md:w-[400px] lg:w-[600px] rounded-lg hover:shadow-xl hover:shadow-green-800 h-[180px] bg-white shadow-lg"
                     >
-                      <div className="pt-3 px-3 flex w-[490px] justify-between">
+                      <div className="pt-3 px-3 flex md:w-[390px] lg:w-[590px] justify-between">
                         <div>
-                          <h2 className="font-bold">{place.name}</h2>
-                          <h3>{place.address}</h3>
+                          <h2 className="font-bold">{item.name} </h2>
+                          <h3 className="max-w-[400px]">{item.subtitr}</h3>
                         </div>
-                        <h3 className="pr-10 text-green-400">
-                          {place.openUntil}
+                        <h3 className="pr-3 text-green-400 text-end">
+                          {" "}
+                          {item.time}
                         </h3>
                       </div>
-                      <hr className="mt-4 w-[480px] pl-3 mr-3 text-2xl" />
+                      <hr className="mt-4 max-w-[580px] px-3 text-2xl" />
                       <div className="flex justify-between mt-5 px-5">
                         <div>
-                          <h2 className="font-light">Working hours:</h2>
-                          <h2>{place.hours}</h2>
+                          <h2 className="font-medium">Ish vaqti:</h2>
+                          <h2>{item.endTime}</h2>
                         </div>
                         <div>
-                          <h2 className="font-light">Phone:</h2>
-                          <h2>{place.phone}</h2>
+                          <h2 className="font-medium">Telefon:</h2>
+                          <h2>+998712005400</h2>
                         </div>
                       </div>
                     </div>
                   ))}
                 </>
               )}
-              <div className="mt-4">
-                <button onClick={closeModal} className="text-[#51267D]">
-                  Close
-                </button>
-              </div>
             </div>
-            <div className="w-1/3">
+            <div className="w-2/3">
               {/* Placeholder for the map component */}
               <div className="h-[400px] bg-gray-300">
                 <div>
                   <div className=" mt-10">
                     <iframe
-                      width="400"
+                      width="100%"
                       height="400"
                       frameborder="0"
                       scrolling="no"

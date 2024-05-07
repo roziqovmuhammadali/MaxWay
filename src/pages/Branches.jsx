@@ -169,15 +169,21 @@ const Branches = () => {
   const [step, setStep] = useState(1);
   const increment = () => {
     setStep((prev) => prev + 1);
+    if (step >= 2) {
+      setStep(2);
+    }
   };
 
   const decrement = () => {
     setStep((prev) => prev - 1);
+    if (step <= 1) {
+      setStep(1);
+    }
   };
 
   return (
-    <div className="px-20">
-      <div className=" flex justify-between  mt-16 ">
+    <div className="px-[10px] sm:px-[20px] md:px-[40px] lg:px-[40px] xl:px-[120px]">
+      <div className=" lg:flex lg:justify-between md:columns  mt-16 ">
         <h2 className=" font-bold text-3xl"> Filiallar</h2>
         <div className=" flex gap-5 pr-40">
           <button
@@ -199,16 +205,16 @@ const Branches = () => {
           {branches.map((item) => (
             <div
               key={item.id}
-              className=" my-10 w-[600px] rounded-lg hover:shadow-xl hover:shadow-green-800 h-[180px] bg-white shadow-lg"
+              className=" my-10 md:w-[400px] lg:w-[600px] rounded-lg hover:shadow-xl hover:shadow-green-800 h-[180px] bg-white shadow-lg"
             >
-              <div className="pt-3 px-3 flex w-[590px] justify-between">
+              <div className="pt-3 px-3 flex md:w-[390px] lg:w-[590px] justify-between">
                 <div>
                   <h2 className="font-bold">{item.name} </h2>
-                  <h3 className="w-[400px]">{item.subtitr}</h3>
+                  <h3 className="max-w-[400px]">{item.subtitr}</h3>
                 </div>
                 <h3 className="pr-3 text-green-400 text-end"> {item.time}</h3>
               </div>
-              <hr className="mt-4 w-[580px] px-3 text-2xl" />
+              <hr className="mt-4 max-w-[580px] px-3 text-2xl" />
               <div className="flex justify-between mt-5 px-5">
                 <div>
                   <h2 className="font-medium">Ish vaqti:</h2>
@@ -227,7 +233,7 @@ const Branches = () => {
       {step === 2 && (
         <div className=" mt-10">
           <iframe
-            width="1250"
+            className="max-w-[1250px] w-full"
             height="600"
             frameborder="0"
             scrolling="no"
